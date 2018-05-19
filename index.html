@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>協音</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />	
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style type="text/css">
+		img{
+			opacity: 1;
+			text-transform: 1s;
+		}
+		img.faded{
+			opacity: 0.2;
+		}
+		body {
+		background-image: url("ref/pictures/bg0.jpg"); 
+		background-size:100%;
+		-moz-background-size:100%; 
+	
+	}
+		</style>
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		$("#summer").click(function(){
+			$("#summer").fadeTo("",0.5);	
+			$("#winter").fadeTo("",1);
+			$("body,html").css("background-image","url(ref/pictures/bgs.jpg)");  
+			$("#summername").show();
+			$("#wintername,#div1111,#div2222,#div3333,#div4444,#div5555,#div6666").hide();
+			$("#div11").fadeIn(1000);
+			$("#div22").fadeIn(1500);
+			$("#div33").fadeIn(2000);
+			$("#div44").fadeIn(2500);
+			$("#div55").fadeIn(3000);
+			$("#div66").fadeIn(3500);
+		});
+
+		$("#winter").click(function(){
+			$("#summer").fadeTo("",1);	
+			$("#winter").fadeTo("",0.5);
+			$("body,html").css("background-image","url(ref/pictures/bgw.jpg)");
+			$("#wintername").show();
+			$("#summername,#div11,#div22,#div33,#div44,#div55,#div66").hide();
+			$("#div1111").fadeIn(1000);
+			$("#div2222").fadeIn(1500);
+			$("#div3333").fadeIn(2000);
+			$("#div4444").fadeIn(2500);
+			$("#div5555").fadeIn(3000);
+			$("#div6666").fadeIn(3500);
+		});
+		    
+
+		//summer's music
+
+		var audios1, playbtns1, audios2, playbtns2, audios3, playbtns3, audios4, playbtns4;
+		function initAudioPlayers1(){
+			audios1 = new Audio();
+			audios1.src = "ref/music/rain.mp3";
+			audios1.loop = true;
+			audios1.pause();		
+			// set object references
+			playbtns1 = document.getElementById("div11");
+			//Add Event Handling
+			playbtns1.addEventListener("click",playPauses1);
+
+			function playPauses1(){
+				if(audios1.paused){
+					audios1.play();
+					$("#div11").fadeTo("",0.5);	
+					$("body,html").css("background-image","url(ref/pictures/bgs1.jpg)").fadeIn(500);
+				} else {
+					audios1.pause();
+					$("#div11").fadeTo("",1);
+				}
+			}
+		}
+		window.addEventListener("load", initAudioPlayers1);
+
+		function initAudioPlayers2(){
+			audios2 = new Audio();
+			audios2.src = "ref/music/bird.mp3";
+			audios2.loop = true;
+			audios2.pause();
+			audios2.volume = 0.5;	
+			// set object references
+			playbtns2 = document.getElementById("div22");
+			//Add Event Handling
+			playbtns2.addEventListener("click",playPauses2);
+
+			function playPauses2(){
+				if(audios2.paused){
+					audios2.play();
+					$("#div22").fadeTo("",0.5);	
+					$("body,html").css("background-image","url(ref/pictures/bgs2.jpg)");							
+				} else {
+					audios2.pause();
+					$("#div22").fadeTo("",1);								
+				}
+			}
+		}
+		window.addEventListener("load", initAudioPlayers2);
+
+		function initAudioPlayers3(){
+			audios3 = new Audio();
+			audios3.src = "ref/music/beach.mp3";
+			audios3.loop = true;
+			audios3.pause();	
+			// set object references
+			playbtns3 = document.getElementById("div33");
+			//Add Event Handling
+			playbtns3.addEventListener("click",playPauses3);
+
+			function playPauses3(){
+				if(audios3.paused){
+					audios3.play();
+					$("#div33").fadeTo("",0.5);
+					$("body,html").css("background-image","url(ref/pictures/bgs3.jpg)");				
+				} else {
+					audios3.pause();
+					$("#div33").fadeTo("",1);				
+				}
+			}
+		}
+		window.addEventListener("load", initAudioPlayers3);
+
+		function initAudioPlayers4(){
+			audios4 = new Audio();
+			audios4.src = "ref/music/whitenoise.mp3";
+			audios4.loop = true;
+			audios4.pause();		
+			// set object references
+			playbtns4 = document.getElementById("div44");
+			//Add Event Handling
+			playbtns4.addEventListener("click",playPauses4);
+
+			function playPauses4(){
+				if(audios4.paused){
+					audios4.play();
+					$("#div44").fadeTo("",0.5);
+					$("body,html").css("background-image","url(ref/pictures/bgs4.jpg)");				
+				} else {
+					audios4.pause();
+					$("#div44").fadeTo("",1);			
+				}
+			}
+		}
+		window.addEventListener("load", initAudioPlayers4);
+
+		//winter's music
+		var audiow1, playbtnw1, audiow2, playbtnw2, audiow3, playbtnw3, audiow4, playbtnw4;
+
+		function initAudioPlayerw1(){
+			audiow1 = new Audio();
+			audiow1.src = "ref/music/fire.mp3";
+			audiow1.loop = true;
+			audiow1.pause();		
+			// set object references
+			playbtnw1 = document.getElementById("div1111");
+			//Add Event Handling
+			playbtnw1.addEventListener("click",playPausew1);
+
+			function playPausew1(){
+				if(audiow1.paused){
+					audiow1.play();
+					$("#div1111").fadeTo("",0.5);
+					$("body,html").css("background-image","url(ref/pictures/bgw1.jpg)");				
+				} else {
+					audiow1.pause();
+					$("#div1111").fadeTo("",1);				
+				}
+			}
+		}
+		window.addEventListener("load", initAudioPlayerw1);
+
+		function initAudioPlayerw2(){
+			audiow2 = new Audio();
+			audiow2.src = "ref/music/wind.mp3";			
+			audiow2.loop = true;
+			audiow2.pause();	
+			// set object references
+			playbtnw2 = document.getElementById("div2222");
+			//Add Event Handling
+			playbtnw2.addEventListener("click",playPausew2);
+
+			function playPausew2(){
+				
+				if(audiow2.paused){
+					audiow2.play();
+					$("#div2222").fadeTo("",0.5);
+					$("body,html").css("background-image","url(ref/pictures/bgw2.jpg)");								
+				} else {
+					audiow2.pause();
+					$("#div2222").fadeTo("",1);								
+				}
+			}
+		}
+		window.addEventListener("load", initAudioPlayerw2);
+
+		function initAudioPlayerw3(){
+			audiow3 = new Audio();
+			audiow3.src = "ref/music/beach.mp3";
+			audiow3.loop = true;
+			audiow3.pause();	
+			// set object references
+			playbtnw3 = document.getElementById("div3333");
+			//Add Event Handling
+			playbtnw3.addEventListener("click",playPausew3);
+
+			function playPausew3(){
+				if(audiow3.paused){
+					audiow3.play();
+					$("#div3333").fadeTo("",0.5);				
+				} else {
+					audiow3.pause();
+					$("#div3333").fadeTo("",1);				
+				}
+			}
+		}
+		window.addEventListener("load", initAudioPlayerw3);
+
+		function initAudioPlayerw4(){
+			audiow4 = new Audio();
+			audiow4.src = "ref/music/whitenoise.mp3";
+			audiow4.loop = true;
+			audiow4.pause();		
+			// set object references
+			playbtnw4 = document.getElementById("div4444");
+			//Add Event Handling
+			playbtnw4.addEventListener("click",playPausew4);
+
+			function playPausew4(){
+				if(audiow4.paused){
+					audiow4.play();
+					$("#div4444").fadeTo("",0.5);				
+				} else {
+					audiow4.pause();
+					$("#div4444").fadeTo("",1);			
+				}
+			}
+		}
+		window.addEventListener("load", initAudioPlayerw4);
+	});
+
+		</script>
+		  
+	</head>
+	<body class="is-loading" background="url(ref/pictures/bg3.jpg)" background-size:"100%"
+			-moz-background-size:"100%">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span >
+								<img id="spring" src="ref/pictures/spring.jpg" height="120px" width="120px">
+								<img id="summer" src="ref/pictures/summer.jpg" height="120px" width="120px">
+								<img id="autumn" src="ref/pictures/autumn.jpg" height="120px" width="120px">
+								<img id="winter" src="ref/pictures/winter.jpg" height="120px" width="120px">
+								
+							</span>
+								<h1 id="springname" style="display:none">Spring's sounds</h1>
+								<h1 id="summername" style="display:none">Summer's sounds</h1>
+								<h1 id="autumnname" style="display:none">Autumn's sounds</h1>
+								<h1 id="wintername" style="display:none">Winter's sounds</h1>
+							<p></p>
+						</header>
+						
+						<footer>
+							<ul class="icons" >
+								<!--spring-->
+								<a><img id="div1" src="ref/pictures/2.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div2" src="ref/pictures/3.jpg"style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div3" src="ref/pictures/4.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div4" src="ref/pictures/5.jpg" style="width:80px;height:80px;display:none;"></a>
+								<!--<a><img id="div5" src="ref/pictures/6.jpg" style="width:80px;height:80px;display:none;"></a>
+								//<a><img id="div6" src="ref/pictures/7.jpg" style="width:80px;height:80px;display:none;"></a>-->
+
+								<!--summer-->
+								<a><img id="div11" src="ref/pictures/s1.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div22" src="ref/pictures/s2.jpg"style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div33" src="ref/pictures/s3.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div44" src="ref/pictures/s4.jpg" style="width:80px;height:80px;display:none;"></a>
+								<!--<a><img id="div55" src="ref/pictures/s5.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div66" src="ref/pictures/s6.jpg" style="width:80px;height:80px;display:none;"></a>-->
+
+								<!--autumn-->
+								<a><img id="div111" src="ref/pictures/2.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div222" src="ref/pictures/3.jpg"style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div333" src="ref/pictures/4.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div444" src="ref/pictures/5.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div555" src="ref/pictures/6.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div666" src="ref/pictures/7.jpg" style="width:80px;height:80px;display:none;"></a>
+
+								<!--winter-->
+								<a><img id="div1111" src="ref/pictures/w1.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div2222" src="ref/pictures/w2.jpg"style="width:80px;height:80px;display:none;"></a>
+								<!--<a><img id="div3333" src="ref/pictures/w3.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div4444" src="ref/pictures/w4.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div5555" src="ref/pictures/w5.jpg" style="width:80px;height:80px;display:none;"></a>
+								<a><img id="div6666" src="ref/pictures/w6.jpg" style="width:80px;height:80px;display:none;"></a>-->
+							</ul>
+						</footer>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; 王昭琪</li>
+							<li><a href="http://html5up.net">季節音樂</a></li>
+						</ul>
+					</footer>
+			</div>
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+	<script src="js/jquery-ui-1.8.17.custom.min.js"></script>
+	</body>
+</html>
